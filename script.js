@@ -1,10 +1,74 @@
-// Mobile Menu Toggle
+// ============ Language Switcher ============
+let currentLanguage = localStorage.getItem('language') || 'vi';
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+
+    // Update all elements with data-i18n attribute
+    updatePageTranslations();
+}
+
+function updatePageTranslations() {
+    const lang = currentLanguage;
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let translation = translations[lang];
+
+        for (let k of keys) {
+            // Handle both string keys and numeric indices
+            if (translation && typeof translation === 'object') {
+                translation = translation[k];
+            }
+        }
+
+        if (translation && typeof translation === 'string') {
+            element.textContent = translation;
+        }
+    });
+}
+
+function initLanguageSwitcher() {
+    const langBtn = document.getElementById('langBtn');
+
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const newLang = currentLanguage === 'vi' ? 'en' : 'vi';
+            setLanguage(newLang);
+            updateLanguageSwitcherUI();
+        });
+    }
+
+    // Set initial UI
+    updateLanguageSwitcherUI();
+    updatePageTranslations();
+}
+
+function updateLanguageSwitcherUI() {
+    const langBtn = document.querySelector('.lang-text');
+    if (langBtn) {
+        langBtn.textContent = currentLanguage === 'vi' ? 'VI' : 'EN';
+    }
+}
+
+// Initialize language switcher on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initLanguageSwitcher();
+});
+
+// ============ Mobile Menu Toggle ============
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
+
     // Animate hamburger menu
     const spans = menuToggle.querySelectorAll('span');
     if (navMenu.classList.contains('active')) {
