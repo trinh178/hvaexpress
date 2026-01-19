@@ -52,8 +52,12 @@ function initLanguageSwitcher() {
 
 function updateLanguageSwitcherUI() {
     const langBtn = document.querySelector('.lang-text');
+    const langIcon = document.getElementById('langIcon');
     if (langBtn) {
         langBtn.textContent = currentLanguage === 'vi' ? 'VI' : 'EN';
+    }
+    if (langIcon) {
+        langIcon.textContent = currentLanguage === 'vi' ? '🇻🇳' : '🇺🇸';
     }
 }
 
