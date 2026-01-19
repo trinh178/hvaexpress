@@ -129,7 +129,7 @@ const translations = {
         footer: {
             tagline: 'Nhận tín nhiệm, giao cảm xúc',
             followUs: 'Theo dõi chúng tôi',
-            copyright: '© 2025 Công Ty TNHH Giải Pháp Chuỗi Cung Ứng Hoàng Vân Anh. All rights reserved.'
+            copyright: '© 2026 Công Ty TNHH Giải Pháp Chuỗi Cung Ứng Hoàng Vân Anh. All rights reserved.'
         }
     },
     en: {
@@ -261,7 +261,7 @@ const translations = {
         footer: {
             tagline: 'Receive Trust, Deliver Emotions',
             followUs: 'Follow Us',
-            copyright: '© 2025 Hoang Van Anh Supply Chain Solutions Company Limited. All rights reserved.'
+            copyright: '© 2026 Hoang Van Anh Supply Chain Solutions Company Limited. All rights reserved.'
         }
     }
 };
