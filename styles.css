@@ -67,7 +67,7 @@ body {
   width: auto;
   transition: transform 0.3s;
   background: var(--white);
-  padding: 8px 12px;
+  padding: 4px 8px;
   border-radius: 8px;
 }
 
