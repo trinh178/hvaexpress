@@ -767,7 +767,7 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--bg-light);
+  background: #0072ce;
   color: var(--text-dark);
   padding: 2rem 0;
   text-align: center;
@@ -795,6 +795,7 @@ body {
   grid-column: 2;
   grid-row: 2;
   flex-basis: auto;
+  color: var(--white);
 }
 
 .footer-logo {
@@ -807,14 +808,14 @@ body {
 }
 
 .footer-logo-img {
-  height: 50px;
+  height: 100px;
   width: auto;
   margin-bottom: 0.5rem;
   opacity: 0.9;
 }
 
 .footer-logo h3 {
-  color: var(--primary-color);
+  color: var(--white);
   font-size: 1.5rem;
   margin-bottom: 0;
 }
@@ -837,7 +838,7 @@ body {
 }
 
 .footer-social h4 {
-  color: var(--primary-color);
+  color: var(--white);
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
