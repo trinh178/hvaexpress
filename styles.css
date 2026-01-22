@@ -266,6 +266,7 @@ body {
     rgba(255, 133, 51, 0.75) 100%
   );
   z-index: 0;
+  opacity: 0.7;
 }
 
 .hero-content {
