@@ -114,7 +114,7 @@ const translations = {
             subtitle: 'Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất',
             phone: {
                 label: 'Điện thoại',
-                number: '038 778 1739',
+                number: '096 597 7297',
                 contact: '(Anh Tuấn)'
             },
             email: {
@@ -246,7 +246,7 @@ const translations = {
             subtitle: 'Contact us for the best advice and support',
             phone: {
                 label: 'Phone',
-                number: '038 778 1739',
+                number: '096 597 7297',
                 contact: '(Mr. Tuan)'
             },
             email: {
