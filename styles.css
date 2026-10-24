@@ -105,7 +105,8 @@ body {
   transition: width 0.3s;
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
   width: 100%;
 }
 
@@ -317,6 +318,66 @@ body {
   flex-wrap: wrap;
 }
 
+/* Page Hero (sub pages) */
+.page-hero {
+  position: relative;
+  padding: 90px 0 80px;
+  background: url("hero-banner.jpg") center / cover no-repeat;
+  color: var(--white);
+  text-align: center;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(242, 101, 34, 0.92) 0%,
+    rgba(255, 133, 51, 0.85) 100%
+  );
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.page-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-hero-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
@@ -355,6 +416,7 @@ body {
 /* Section Styles */
 .section {
   padding: 80px 0;
+  scroll-margin-top: 80px; /* keep anchored sections clear of the sticky navbar */
 }
 
 .section-header {
@@ -698,72 +760,367 @@ body {
 }
 
 .recruitment-cta {
+  margin-top: 60px;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ff8533 100%);
+  border-radius: 15px;
+  color: var(--white);
   text-align: center;
-  margin-top: 3rem;
+}
+
+.recruitment-cta h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.recruitment-cta p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* Job List (tuyen-dung.html) */
+.jobs-section {
+  margin-bottom: 60px;
+}
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.job-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  background: var(--white);
+  border-radius: 15px;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.job-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(242, 101, 34, 0.2);
+}
+
+.job-badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+.job-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.job-item:hover .job-title {
+  color: var(--primary-color);
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.job-meta li {
+  background: rgba(0, 114, 206, 0.08);
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+}
+
+.job-item-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.job-salary {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.job-item-link {
+  padding: 0.6rem 1.4rem;
+  background: var(--primary-color);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.job-item:hover .job-item-link {
+  background: #ff7935;
+}
+
+/* Arrow lives in CSS so data-i18n text replacement doesn't drop it */
+.job-item-link::after,
+.job-apply::after {
+  content: " →";
+}
+
+/* Job Detail (viec-lam/*.html) */
+.job-hero .job-badge {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+.job-hero-salary {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.job-hero-meta {
+  justify-content: center;
+}
+
+.job-hero-meta li {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+}
+
+.job-detail-section {
+  background: var(--bg-light);
+}
+
+.job-post {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  padding: 2.5rem;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--primary-color);
+}
+
+.job-block + .job-block {
+  margin-top: 2rem;
+}
+
+.job-block h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.job-block ul {
+  list-style: none;
+}
+
+.job-block li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.job-block li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.7em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
+.job-apply-box {
+  align-self: start;
+  position: sticky;
+  top: 130px;
+  background: rgba(242, 101, 34, 0.06);
+  border: 1px solid rgba(242, 101, 34, 0.2);
+  border-radius: 15px;
+  padding: 1.75rem;
+}
+
+.job-apply-box h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.job-apply-box p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.job-contact {
+  display: block;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  overflow-wrap: anywhere;
+  transition: color 0.3s;
+}
+
+.job-contact:hover {
+  color: var(--primary-color);
+}
+
+.job-contact-name {
+  white-space: nowrap;
+}
+
+.job-apply {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.4rem;
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.job-apply:hover {
+  background: #ff7935;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(242, 101, 34, 0.3);
+}
+
+.job-back {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.job-back:hover {
+  text-decoration: underline;
 }
 
 /* Contact Section */
 .contact-section {
-  background: var(--white);
-  color: var(--text-dark);
+  background: var(--bg-light);
 }
 
-.contact-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
 }
 
 .contact-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .contact-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  background: var(--bg-light);
-  padding: 2rem;
+  gap: 1.25rem;
+  background: var(--white);
+  padding: 1.5rem;
   border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s;
 }
 
 .contact-item:hover {
-  transform: translateY(-5px);
-  background: #e8f0f7;
+  transform: translateY(-3px);
 }
 
 .contact-icon {
-  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
-  margin-bottom: 1rem;
+  background: rgba(242, 101, 34, 0.1);
+  border-radius: 50%;
+  font-size: 1.5rem;
 }
 
 .contact-details h4 {
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
 }
 
 .contact-details a {
-  color: var(--secondary-color);
+  color: var(--text-dark);
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: opacity 0.3s;
+  font-size: 1.15rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  transition: color 0.3s;
 }
 
 .contact-details a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  color: var(--primary-color);
 }
 
 .contact-details p {
-  margin-top: 0.5rem;
-  opacity: 0.95;
+  color: var(--text-dark);
+  font-weight: 500;
   line-height: 1.6;
+}
+
+.contact-map {
+  min-height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 0;
 }
 
 /* Footer */
@@ -1017,12 +1374,51 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .recruitment-content {
+  .recruitment-content,
+  .job-post,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
-  .contact-info {
-    grid-template-columns: 1fr;
+  .page-hero {
+    padding: 60px 0;
+  }
+
+  .page-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .page-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .job-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .job-item-side {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .job-title {
+    font-size: 1.25rem;
+  }
+
+  .job-post {
+    gap: 2rem;
+  }
+
+  .job-apply-box {
+    position: static;
+  }
+
+  .contact-map,
+  .contact-map iframe {
+    min-height: 300px;
   }
 
   .footer-content {
@@ -1088,9 +1484,15 @@ body {
     font-size: 1.8rem;
   }
 
+  .page-hero-title {
+    font-size: 2rem;
+  }
+
   .card,
+  .job-post,
   .esg-section,
-  .tagline-section {
+  .tagline-section,
+  .recruitment-cta {
     padding: 1.5rem;
   }
 }

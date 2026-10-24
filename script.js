@@ -127,11 +127,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.card, .esg-item, .culture-item, .process-step, .contact-item').forEach(el => {
+function observeFadeIn(el) {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
-});
+}
+
+// Observe elements for animation
+document.querySelectorAll('.card, .esg-item, .culture-item, .process-step, .contact-item, .job-item').forEach(observeFadeIn);
 

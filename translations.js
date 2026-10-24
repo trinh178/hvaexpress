@@ -5,6 +5,7 @@ const translations = {
             current: 'VI'
         },
         nav: {
+            home: 'Trang chủ',
             introduction: 'Giới thiệu',
             recruitment: 'Tuyển dụng',
             contact: 'Liên hệ'
@@ -107,11 +108,30 @@ const translations = {
                     { title: 'Ký hợp đồng thử việc', desc: '' }
                 ]
             },
-            cta: 'Ứng tuyển ngay'
+            jobs: {
+                title: 'Vị trí đang tuyển',
+                urgent: 'Tuyển gấp',
+                description: 'Mô tả công việc',
+                requirements: 'Yêu cầu',
+                benefits: 'Quyền lợi',
+                applyTitle: 'Ứng tuyển ngay',
+                applyNote: 'Ứng viên quan tâm vui lòng gửi CV hoặc liên hệ:',
+                applyButton: 'Gửi CV qua email',
+                viewDetails: 'Xem chi tiết',
+                back: '← Xem tất cả vị trí tuyển dụng'
+            },
+            more: {
+                title: 'Chưa thấy vị trí phù hợp?',
+                text: 'Hãy gửi CV cho chúng tôi, HVA Express sẽ liên hệ khi có vị trí phù hợp với bạn.',
+                button: 'Gửi CV cho chúng tôi'
+            }
         },
         contact: {
             title: 'Liên hệ',
             subtitle: 'Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất',
+            hotline: {
+                label: 'Hotline'
+            },
             phone: {
                 label: 'Điện thoại',
                 number: '096 597 7297',
@@ -137,6 +157,7 @@ const translations = {
             current: 'EN'
         },
         nav: {
+            home: 'Home',
             introduction: 'Introduction',
             recruitment: 'Recruitment',
             contact: 'Contact'
@@ -239,11 +260,30 @@ const translations = {
                     { title: 'Sign trial contract', desc: '' }
                 ]
             },
-            cta: 'Apply Now'
+            jobs: {
+                title: 'Open Positions',
+                urgent: 'Urgent',
+                description: 'Job Description',
+                requirements: 'Requirements',
+                benefits: 'Benefits',
+                applyTitle: 'Apply Now',
+                applyNote: 'Interested candidates, please send your CV or contact:',
+                applyButton: 'Send CV by email',
+                viewDetails: 'View details',
+                back: '← View all open positions'
+            },
+            more: {
+                title: 'Not seeing the right position?',
+                text: 'Send us your CV and HVA Express will contact you when a suitable position opens.',
+                button: 'Send us your CV'
+            }
         },
         contact: {
             title: 'Contact',
             subtitle: 'Contact us for the best advice and support',
+            hotline: {
+                label: 'Hotline'
+            },
             phone: {
                 label: 'Phone',
                 number: '096 597 7297',
@@ -255,7 +295,7 @@ const translations = {
             },
             address: {
                 label: 'Office',
-                text: 'Song Than Station, No. 1 Independence Avenue,<br>Di An Ward, HCMC'
+                text: 'Song Than Station, No. 1 Independence Avenue, Di An Ward, HCMC'
             }
         },
         footer: {
