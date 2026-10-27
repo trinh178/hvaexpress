@@ -963,6 +963,26 @@ body {
   background: var(--primary-color);
 }
 
+/* Lists whose items already start with an emoji: the emoji is the bullet */
+.job-block .emoji-list li {
+  padding-left: 0;
+}
+
+.job-block .emoji-list li::before {
+  display: none;
+}
+
+.job-note {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 10px 10px 0;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.7;
+}
+
 .job-apply-box {
   align-self: start;
   position: sticky;
