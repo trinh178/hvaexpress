@@ -135,5 +135,5 @@ function observeFadeIn(el) {
 }
 
 // Observe elements for animation
-document.querySelectorAll('.card, .esg-item, .culture-item, .process-step, .contact-item, .job-item').forEach(observeFadeIn);
+document.querySelectorAll('.card, .esg-item, .culture-item, .process-step, .contact-item, .job-item, .news-card').forEach(observeFadeIn);
 

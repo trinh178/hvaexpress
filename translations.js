@@ -7,6 +7,7 @@ const translations = {
         nav: {
             home: 'Trang chủ',
             introduction: 'Giới thiệu',
+            news: 'Tin tức',
             recruitment: 'Tuyển dụng',
             contact: 'Liên hệ'
         },
@@ -126,6 +127,12 @@ const translations = {
                 button: 'Gửi CV cho chúng tôi'
             }
         },
+        news: {
+            title: 'Tin tức',
+            subtitle: 'Cập nhật hoạt động và sự kiện nổi bật của HVA Express',
+            readMore: 'Đọc tiếp',
+            back: '← Xem tất cả tin tức'
+        },
         contact: {
             title: 'Liên hệ',
             subtitle: 'Hãy liên hệ với chúng tôi để được tư vấn và hỗ trợ tốt nhất',
@@ -159,6 +166,7 @@ const translations = {
         nav: {
             home: 'Home',
             introduction: 'Introduction',
+            news: 'News',
             recruitment: 'Recruitment',
             contact: 'Contact'
         },
@@ -277,6 +285,12 @@ const translations = {
                 text: 'Send us your CV and HVA Express will contact you when a suitable position opens.',
                 button: 'Send us your CV'
             }
+        },
+        news: {
+            title: 'News',
+            subtitle: 'Latest activities and highlights from HVA Express',
+            readMore: 'Read more',
+            back: '← View all news'
         },
         contact: {
             title: 'Contact',
