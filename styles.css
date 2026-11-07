@@ -1212,6 +1212,7 @@ body {
   font-size: 1.08rem;
   line-height: 1.85;
   margin-bottom: 1.25rem;
+  text-align: justify;
 }
 
 .article-figure {
@@ -1245,6 +1246,7 @@ body {
   font-size: 1.15rem;
   font-style: italic;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .article-section .back-link {
